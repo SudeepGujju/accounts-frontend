@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: 14px;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-tbody > tr:not(.p-datatable-emptymessage) > td {
+    @apply !p-0 !px-3;
+}
+
+.p-datatable-emptymessage > td{
+    @apply justify-center;
+    @apply !text-center;
+    width: 100%;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-tbody > tr:not(.p-datatable-emptymessage) > td {
+    /* @apply break-all; */
+    /* overflow-wrap: break-word; */
+    overflow-wrap: anywhere;
+    @apply !pl-2;
+    @apply !pr-2;
+}
+
+.p-column-filter-row .p-column-filter-menu-button, .p-column-filter-row .p-column-filter-clear-button{
+    @apply !m-0;
+}
