@@ -55,9 +55,11 @@ phases:
 artifacts:
   files:
     - build/**/*
-    - aws/*
-  name: builds/$CODEBUILD_BUILD_NUMBER/deploy
-  #discard-paths: yes
+    # - location
+  #name: $(date +%Y-%m-%d)
+  files:
+    - aws/**/*
+  discard-paths: yes
   #base-directory: location
 #cache:
   #paths:
