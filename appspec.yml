@@ -2,8 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /build/
-    # destination: /usr/share/nginx/html/
-    destination: /home/ec2-user/accounts/test-code-deploy/
+    destination: /usr/share/nginx/html/
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
