@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /build/*
+  - source: /build/
     # destination: /usr/share/nginx/html/
     destination: /home/ec2-user/accounts/test-code-deploy/
     overwrite: true
