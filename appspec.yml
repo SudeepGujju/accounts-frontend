@@ -4,7 +4,7 @@ files:
   - source: /build/
     # destination: /usr/share/nginx/html/
     destination: /home/ec2-user/accounts/test-code-deploy/
-    overwrite: true
+file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
     - location: scripts/stop_server
