@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/699.4039f73c.chunk.js","mappings":"6LAQA,MAJA,WACE,OAAO","sources":["pages/home/Home.component.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nimport \"./Home.component.css\";\r\n\r\nfunction HomeComponent() {\r\n  return <div>HomeComponent</div>;\r\n}\r\n\r\nexport default HomeComponent;\r\n"],"names":[],"sourceRoot":""}

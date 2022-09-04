@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: build/*
+  - source: /build/*
     # destination: /usr/share/nginx/html/
     destination: /home/ec2-user/accounts/test-code-deploy/
 hooks:
@@ -9,7 +9,7 @@ hooks:
     - location: scripts/stop_server
       timeout: 300
       runas: root
-  # BeforeInstall:
+  BeforeInstall:
     # - location: scripts/install_dependencies
     #   timeout: 300
     #   runas: root
