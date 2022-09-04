@@ -1,6 +1,4 @@
 #!/bin/bash
-isExistApp = `pgrep nginx`
-if [[ -n  $isExistApp ]]; then
+if [ -f  /run/nginx.pid ]; then
     nginx -s stop     
 fi
-
