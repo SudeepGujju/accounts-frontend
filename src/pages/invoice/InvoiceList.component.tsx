@@ -151,7 +151,7 @@ function InvoiceListComponent() {
     tableRef?.current?.exportCSV({ selectionOnly: false });
   };
 
-  const formatInvoiceAmount = (rowData: Invoice, field: 'invcAmt'|'taxAmt'|'gstAmt') => {
+  const formatInvoiceAmount = (rowData: Invoice, field: 'invcAmt'|'taxAmt'|'gstAmt'|'amt5'|'amt12'|'amt18'|'amt28'|'amt0'|'igst'|'cgst'|'sgst') => {
     return formatAmount(rowData[field]);
   }
 
@@ -176,9 +176,17 @@ function InvoiceListComponent() {
       //const total = rows.slice(startIndex, startIndex+recordsCount).reduce( (acc: any, cur: any) => { return { amt: acc.amt+cur.invcAmt, tax: acc.tax+cur.taxAmt, gst: acc.gst+cur.gstAmt } }, {amt: 0, tax:0, gst: 0} );
 
       //Get the sum of fields of all records.
-      const total = rows.reduce( (acc: any, cur: any) => { return { amt: acc.amt+cur.invcAmt, tax: acc.tax+cur.taxAmt, gst: acc.gst+cur.gstAmt } }, {amt: 0, tax:0, gst: 0} );
+      const total = rows.reduce( (acc: any, cur: any) => { return { 
+        amt: acc.amt+cur.invcAmt, tax: acc.tax+cur.taxAmt, gst: acc.gst+cur.gstAmt, amt5: acc.amt5+cur.amt5, amt12: acc.amt12+cur.amt12, amt18: acc.amt18+cur.amt18, amt28: acc.amt28+cur.amt28, amt0: acc.amt0+cur.amt0, igst: acc.igst+cur.igst, cgst: acc.cgst+cur.cgst, sgst: acc.sgst+cur.sgst}
+      },
+      {amt: 0, tax:0, gst: 0, amt5: 0, amt12: 0, amt18: 0, amt28: 0, amt0: 0, igst: 0, cgst: 0, sgst:0}
+      );
 
-      if(total.amt == 0 && total.tax == 0 && total.gst == 0 ){
+      if(total.amt == 0 && total.tax == 0 && total.gst == 0 
+        && total.amt5 == 0 && total.amt12 == 0 && total.amt18 == 0 
+        && total.amt28 == 0 && total.amt0 == 0 && total.igst == 0 
+        && total.cgst == 0 && total.sgst == 0)
+      {
         setFooterTemplate(undefined);
         setListSize(0);
         return;
@@ -190,7 +198,15 @@ function InvoiceListComponent() {
             <Column footer={`${formatAmount(total.amt)}`} align="right" style={{ width: '7rem' }}/>
             <Column footer={`${formatAmount(total.tax)}`} align="right" style={{ width: '7rem' }}/>
             <Column footer={`${formatAmount(total.gst)}`} align="right" style={{ width: '7rem' }}/>
-            <Column footer="" colSpan={9} align="right" style={{ width: '20rem' }}/>
+            <Column footer="" colSpan={10} align="right" style={{ width: '24rem' }}/>
+            <Column footer={`${formatAmount(total.amt5)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.amt12)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.amt18)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.amt28)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.amt0)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.igst)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.cgst)}`} align="right" style={{ width: '7rem' }}/>
+            <Column footer={`${formatAmount(total.sgst)}`} align="right" style={{ width: '7rem' }}/>
         </Row>
         </ColumnGroup>)
 
@@ -351,6 +367,79 @@ function InvoiceListComponent() {
             filter filterPlaceholder="Search by Month" filterHeaderClassName="p-inputtext-sm"
             showFilterMenu={false}
             style={{ width: '8rem' }}
+          ></Column>
+          <Column field="st" header="ST" sortable style={{ width: '4rem' }}></Column>
+          <Column
+            field="amt5"
+            header="Amt 5"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "amt5") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="amt12"
+            header="Amt 12"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "amt12") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="amt18"
+            header="Amt 18"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "amt18") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="amt28"
+            header="Amt 28"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "amt28") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="amt0"
+            header="Amt 0"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "amt0") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="igst"
+            header="IGST"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "igst") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="cgst"
+            header="CGST"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "cgst") }}
+            style={{ width: '7rem' }}
+          ></Column>
+          <Column
+            field="sgst"
+            header="SGST"
+            align="right"
+            alignHeader="left"
+            sortable
+            body={(rowData) => { return formatInvoiceAmount(rowData, "sgst") }}
+            style={{ width: '7rem' }}
           ></Column>
         </DataTable>
       </div>

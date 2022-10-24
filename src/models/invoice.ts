@@ -14,6 +14,15 @@ export type Invoice = {
     gstAmt: number;
     remarks: string;
     month: string;
+    st: string;
+    amt5:number;
+    amt12:number;
+    amt18:number;
+    amt28:number;
+    amt0:number;
+    igst:number;
+    cgst:number;
+    sgst:number;
 }
 
 export enum InvoiceType {
