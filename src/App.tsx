@@ -49,6 +49,9 @@ const TransactionDialogComponent = React.lazy(
 const InvoiceComponent = React.lazy(
   () => import("./pages/invoice/Invoice.component")
 );
+const CustomerSalesComponent = React.lazy(
+  () => import("./pages/customerSales/CustomerSales.component")
+);
 const BankTransactionComponent = React.lazy(
   () => import("./pages/bankTransaction/BankTransaction.component")
 );
@@ -113,6 +116,14 @@ function App(): JSX.Element {
                     element={
                       <Suspense fallback={<></>}>
                         <InvoiceComponent location={backgroundPageLocation}/>
+                      </Suspense>
+                    }
+                  ></Route>
+                  <Route
+                    path="/customer-sales"
+                    element={
+                      <Suspense fallback={<></>}>
+                        <CustomerSalesComponent location={backgroundPageLocation}/>
                       </Suspense>
                     }
                   ></Route>

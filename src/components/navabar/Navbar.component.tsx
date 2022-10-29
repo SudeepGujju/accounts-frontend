@@ -34,6 +34,7 @@ function NavbarComponent() {
       <>
         <Link to="/user">User</Link>
         <Link to="/invoice-upload">Invoice (GSTR2) Upload</Link>
+        <Link to="/customer-sales">Customer Sales</Link>
       </>
     )
 

@@ -25,6 +25,8 @@ export const INVOICE_UPLOAD_URL = '/invoice/upload';
 // export const INVOICE_DROPDOWN_URL = INVOICE_URL+'/dropdown';
 export const INVOICE_DOWNLOAD_SAMPLE_URL = INVOICE_URL+'/download-sample';
 
+export const CUSTOMER_SALES_URL = '/customer-sales';
+
 export const BANK_TRANSACTION_URL = '/bank';
 export const BANK_TRANSACTION_UPLOAD_URL = '/bank/upload';
 export const BANK_TRANSACTION_DOWNLOAD_SAMPLE_URL = BANK_TRANSACTION_URL+'/download-sample';

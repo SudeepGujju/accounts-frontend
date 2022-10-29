@@ -5,4 +5,5 @@ export { createAccount, getAccount, deleteAccount, getAccountList, updateAccount
 export { createUser, updateUser, deleteUser, getUser, getUserList, getUserDropdownList } from './user';
 export { createTransaction, deleteTransaction, getTransaction, getTransactionList, updateTransaction } from './transaction';
 export { getInvoiceList } from './invoice';
+export { getSalesList } from './customerSales';
 export { createBankTransaction, deleteBankTransaction, getBankTransaction, getBankTransactionList, updateBankTransaction } from './bankTransaction';
