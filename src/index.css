@@ -27,3 +27,7 @@ html {
 .p-column-filter-row .p-column-filter-menu-button, .p-column-filter-row .p-column-filter-clear-button{
     @apply !m-0;
 }
+
+.p-datatable .p-column-filter-element{
+    width: auto !important;
+}

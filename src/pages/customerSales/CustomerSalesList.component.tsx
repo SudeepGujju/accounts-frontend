@@ -198,7 +198,7 @@ function CustomerSalesListComponent() {
 
       let html = (<ColumnGroup>
         <Row>
-            <Column footer="" colSpan={9} align="right" style={{ width: '60rem' }}/>
+            <Column footer="" colSpan={10} align="right" style={{ width: '66rem' }}/>
             <Column footer={`${formatAmount(total.amt)}`} align="right" style={{ width: '7rem' }}/>
             <Column footer={`${formatAmount(total.tax)}`} align="right" style={{ width: '7rem' }}/>
             <Column footer={`${formatAmount(total.gst)}`} align="right" style={{ width: '7rem' }}/>
@@ -316,6 +316,9 @@ function CustomerSalesListComponent() {
           onValueChange={ updateFooter }
           footerColumnGroup={ footerTemplate }
         >
+          <Column field="loginId" header="UserID" sortable style={{ width: '6rem' }}
+            filter filterPlaceholder="User ID" filterHeaderClassName="p-inputtext-sm"
+            showFilterMenu={false}></Column>
           <Column field="invcTypeName" header="Type" sortable style={{ width: '6rem' }}></Column>
           <Column field="invcNo" header="No" sortable
             filter filterPlaceholder="Search by no" filterHeaderClassName="p-inputtext-sm"
