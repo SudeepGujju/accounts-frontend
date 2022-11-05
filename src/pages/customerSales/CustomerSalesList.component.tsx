@@ -231,7 +231,7 @@ function CustomerSalesListComponent() {
                     <div className="field flex items-center gap-2 w-1/5 max-w-1/5">
                       <label htmlFor="gst" className="block"><span className='text-[#e24c4c]'>*</span>GST</label>
                       <div className="">                        
-                        <InputText type="text" name="gst" id="gst" value={CustomerSalesForm.values.gst} onChange={CustomerSalesForm.handleChange} onBlur={CustomerSalesForm.handleBlur} className={classNames({ 'p-invalid': isFormFieldValid('gst'), 'p-inputtext-sm': true })} placeholder="GST" autoFocus required maxLength={10} />
+                        <InputText type="text" name="gst" id="gst" value={CustomerSalesForm.values.gst} onChange={CustomerSalesForm.handleChange} onBlur={CustomerSalesForm.handleBlur} className={classNames({ 'p-invalid': isFormFieldValid('gst'), 'p-inputtext-sm': true })} placeholder="GST" autoFocus required maxLength={20} />
                         {/* {getFormErrorMessage('gst')} */}
                       </div>
                     </div>
